@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>RAG Chat Assistant</title>
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>💬</text></svg>">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>📚 RAG Chat Assistant</h1>
+			<p>Upload documents and ask questions</p>
+		</div>
+
+		<div class="section">
+			<h2>📤 Upload Documents</h2>
+			<form id="upload-form">
+				<div class="file-input-wrapper">
+					<input type="file" id="file" name="file" accept=".pdf,.docx,.txt" />
+					<button type="submit" class="btn-primary">Upload Document</button>
+				</div>
+			</form>
+		</div>
+
+		<div class="section">
+			<h3>📄 Select Documents for Chat</h3>
+			<p class="help-text">Select one or more documents to use as context (hold Ctrl/Cmd to select multiple)</p>
+			<div class="doc-controls">
+				<div id="doc-select" class="doc-checkbox-list">
+					<div class="no-docs">No documents uploaded yet...</div>
+				</div>
+				<div class="button-group">
+					<button id="refresh-docs" class="btn-secondary">🔄 Refresh List</button>
+					<button id="delete-doc" class="btn-danger">🗑️ Delete Selected</button>
+				</div>
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="section">
+			<h2>💬 Chat with Your Documents</h2>
+			<div class="provider-select">
+				<label for="provider">AI Provider:</label>
+				<select id="provider">
+					<option value="gemini">Google Gemini</option>
+					<option value="groq">Groq (Llama)</option>
+				</select>
+			</div>
+			<div id="chat-box">
+				<div class="welcome-message">
+					👋 Welcome! Upload documents and start asking questions.
+				</div>
+			</div>
+			<div class="chat-input-container">
+				<input id="message" type="text" placeholder="Type your question here..." />
+				<button id="mic-btn" title="Voice Input">🎤</button>
+				<button id="send-btn" class="btn-primary">Send</button>
+				<div class="speech-controls">
+					<button id="speak-btn" title="Read Answer">🔊</button>
+					<button id="stop-speak-btn" title="Stop Reading" class="btn-danger" style="display: none">⏹️</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
