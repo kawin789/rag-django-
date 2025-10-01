@@ -14,7 +14,7 @@ A Retrieval-Augmented Generation (RAG) chat application built with Django that a
 
 ## Setup
 
-Uploading 2025-10-02 00-39-23.mp4…
+https://github.com/user-attachments/assets/60131e5c-77ff-4858-8bf6-d741f911a956
 
 
 
@@ -73,6 +73,10 @@ Open your browser and go to: http://127.0.0.1:8000/
 - **AI Models**: Google Gemini, Groq (Llama)
 - **Vector Search**: FAISS
 - **Embeddings**: Sentence Transformers
+
+Uploading 2025-10-02 00-39-23.mp4…
+
+
 - **Document Processing**: PyPDF, python-docx
 - **Frontend**: Vanilla JavaScript, CSS3
 
@@ -83,6 +87,3 @@ Open your browser and go to: http://127.0.0.1:8000/
 - The database is SQLite (db.sqlite3)
 - Vector embeddings are stored in the database for fast retrieval
 
-## License
-
-MIT License
