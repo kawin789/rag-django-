@@ -14,6 +14,10 @@ A Retrieval-Augmented Generation (RAG) chat application built with Django that a
 
 ## Setup
 
+Uploading 2025-10-02 00-39-23.mp4…
+
+
+
 ### 1. Install Dependencies
 
 ```bash
