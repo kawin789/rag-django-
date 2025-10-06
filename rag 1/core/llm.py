@@ -32,17 +32,18 @@ def _call_groq(prompt: str, model_name: Optional[str] = None) -> str:
 			del os.environ[var]
 	
 	try:
+		import httpx
 		from groq import Groq
-		
+
 		api_key = GROQ_API_KEY
 		if not api_key:
 			return "Groq API key not configured."
-		
-		# Initialize Groq client
-		client = Groq(api_key=api_key)
-		
+
+		# Initialize Groq client with custom http_client (no proxy configuration)
+		http_client = httpx.Client()
+		client = Groq(api_key=api_key, http_client=http_client)
+
 		chosen = model_name or "llama-3.3-70b-versatile"
-		
 		chat = client.chat.completions.create(
 			model=chosen,
 			messages=[{"role": "user", "content": prompt}],
